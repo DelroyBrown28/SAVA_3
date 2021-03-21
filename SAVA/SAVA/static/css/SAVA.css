@@ -1,12 +1,31 @@
 body,
 html {
     height: 100vh;
-    background-color: #F9F3F2;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
     font-family: 'Inter', sans-serif;
     /* overflow: hidden; */
 
+}
+
+/* 
+==============
+LITTLE HELPERS
+==============
+*/
+
+.flexed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redborder {
+    border: 1px solid red;
+}
+
+.blueborder {
+    border: 1px solid blue;
 }
 
 /* 
@@ -15,10 +34,98 @@ HOME PAGE
 =========
 */
 
-.top-homepage-contents {
-    position: relative;
-    height: calc(100vh - 64px);
+.home-page-main {
+    height: calc(100vh - 100px);
+}
+
+.home-page-contents {
+    height: 100%;
+    width: 100%;
+}
+
+.logo-img-wrap {
+    height: 100%;
+
+}
+
+.main-page-blurb-actions {}
+
+.top-homepage-blurb,
+.subheading {
+    font-family: 'Yeseva One', cursive;
+}
+
+.top-homepage-blurb {
+    line-height: 90.5%;
+    font-size: 64px;
+
+}
+
+.subheading {
+    text-align: left;
+    line-height: 105% !important;
+    width: 100%;
+    font-size: 25px;
+    opacity: 0.6;
+}
+
+.top-homepage-btn-wrap {
     width: 100%;
     z-index: 200;
 
+}
+
+.top-homepage-btns {
+    height: 50px;
+    width: 210px;
+    font-family: 'Yeseva One', cursive;
+    border: none;
+    font-size: 20px;
+
+}
+
+.services-btn {
+    background-color: #333;
+    color: #f7f7f7;
+}
+
+.contact-btn {
+    background-color: transparent;
+    border: 1px solid #333;
+    margin-left: 25px;
+}
+
+
+
+
+/* Navbar */
+
+nav {
+    background: #f9f3f25d;
+    box-shadow: none;
+    width: 100%;
+    backdrop-filter: blur(30px);
+
+
+}
+
+#nav-mobile>li>a {
+    color: #000;
+}
+
+
+
+
+
+
+/* 
+================
+HOVERS & SUCH...
+================
+*/
+
+.link-hover:hover {
+    background-color: transparent !important;
+    opacity: 0.5;
+    transition: 0.3s;
 }

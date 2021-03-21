@@ -1,32 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
+<!-- {{ self.main_page_title }} -->
 
 
 {% block content %}
-    {{ self.main_page_title }}
 
-    <!-- TOP HOMEPAGE CONTENTS -->
-<section class="row top-homepage-contents">
-    <div class="col s6 flexed remove-me main-logo-wrap">
-        <img src="{% static 'images/mainlogo.png' %}" alt="Main Logo">
-    </div>
+<body style="background-image: url({% static 'images/mainbbg.png' %});">
 
-    <div class="col s6 flexed main-blurb-wrap">
-        <div class="heading-subheading-wrap remove-me">
-            <h3 class="top-homepage-blurb">Finally!<br>
-                a better, faster and more<br>
-                personal Virtual Assistant.
+    <section class="home-page-main flexed">
 
-            </h3>
-            <p class="subheading mt-3 remove-me">Check out our services<br>
-                and what we offer.</p>
-            <div class="top-homepage-btn-wrap">
-                <button class="top-homepage-btns services-btn btn-to-services remove-me">Services</button>
+        <div class="row home-page-contents">
 
-                <a href="#"><button
-                        class="top-homepage-btns contact-btn remove-me">Contact</button></a>
+            <div class="col s6 logo-img-wrap flexed">
+                <img src="{% static 'images/mainlogo.png' %}" alt="Main logo image">
+            </div>
+
+            <div class="col s6 flexed main-page-blurb-actions">
+                <div class="heading-subheading-wrap remove-me">
+                    <h3 class="top-homepage-blurb">Miss SA Brown<br>
+                        Virtual Assistant<br>
+
+                    </h3>
+                    <p class="subheading mt-3 remove-me">Let me take care of your everyday tasks<br>
+                        so you can focus on what matters most.</p>
+                    <div class="top-homepage-btn-wrap">
+                        <button class="top-homepage-btns services-btn btn-to-services remove-me">Services</button>
+
+                        <a href="#"><button class="top-homepage-btns contact-btn remove-me">Contact</button></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+    </section>
+</body>
+
+
 {% endblock content %}
-    
