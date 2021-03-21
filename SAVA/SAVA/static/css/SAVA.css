@@ -1,0 +1,24 @@
+body,
+html {
+    height: 100vh;
+    background-color: #F9F3F2;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Inter', sans-serif;
+    /* overflow: hidden; */
+
+}
+
+/* 
+=========
+HOME PAGE
+=========
+*/
+
+.top-homepage-contents {
+    position: relative;
+    height: calc(100vh - 64px);
+    width: 100%;
+    z-index: 200;
+
+}
