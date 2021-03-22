@@ -1,4 +1,5 @@
 from wagtail.core import blocks
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class TitleAndTextBlock(blocks.StructBlock):
@@ -10,6 +11,30 @@ class TitleAndTextBlock(blocks.StructBlock):
         template = "blocks/title_and_text_block.html"
         icon = 'edit'
         label = 'Title & Text'
+
+
+class ServiceCardBlock(blocks.StructBlock):
+    """Cards that display services"""
+    service_title = blocks.CharBlock(required=True, help_text="Add Title")
+
+    service_cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("service_card_icon", ImageChooserBlock()),
+                ("service_title", blocks.CharBlock(required=True, max_length=50)),
+                ("service_item", blocks.TextBlock(required=True, max_length=75)),
+                ("button_page", blocks.PageChooserBlock(
+                    required=False, help_text="Link to page on your website")),
+                ("button_url", blocks.URLBlock(
+                    required=False, help_text="Link to EXTERNAL URL")),
+            ]
+        )
+    )
+    
+    class Meta:
+        template = "blocks/service_card_block.html"
+        icon = 'image'
+        label = 'Service Cards'
 
 
 class RichtextBlock(blocks.RichTextBlock):

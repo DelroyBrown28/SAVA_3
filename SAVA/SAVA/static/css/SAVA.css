@@ -138,7 +138,7 @@ SERVICES SECTION
     background-color: #f9f3f2;
     z-index: 200;
 
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .services-card {

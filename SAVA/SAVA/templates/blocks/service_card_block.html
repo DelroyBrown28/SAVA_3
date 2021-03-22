@@ -1,7 +1,23 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailimages_tags %}
 
 
+<h1>{{ self.service_title }}</h1>
 
-<div class="services-card flexed blueborder">
-    <h5>Content <span style="font-weight: 700;">Management</span></h5>
+
+{% for service_card in self.service_cards  %}
+{% image service_card.service_card_icon fill-24x24 as service_card_icon %}
+
+<div style="z-index: 500;" class="service-card flexed redborder">
+    <img src="{{ service_card_icon.url }}" alt="{{ service_card_icon.alt }}">
+    <h5>{{ service_card.service_title }}</h5>
+    <p>{{ service_card.service_item }}</p>
+
+    {% if service_card.button_page %}
+    <a href="{{ service_card.button_page.url }}">Button to other page</a>
+    {% elif service_card.button_url %}
+    <a href="{{ service_card.button_url }}">Button to EXTERNAL page</a>
+    {% endif %}
+
 </div>
+
+{% endfor %}
