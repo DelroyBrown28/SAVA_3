@@ -36,6 +36,7 @@ HOME PAGE
 
 .home-page-main {
     height: calc(100vh - 100px);
+    padding: 145px;
 }
 
 .home-page-contents {
@@ -69,6 +70,15 @@ HOME PAGE
     width: 100%;
     font-size: 25px;
     opacity: 0.6;
+}
+.heading-subheading-wrap p {
+    text-align: left;
+    line-height: 105% !important;
+    width: 100%;
+    font-size: 25px;
+    opacity: 0.6;
+    font-family: 'Yeseva One', cursive;
+
 }
 
 .top-homepage-btn-wrap {
@@ -127,6 +137,8 @@ SERVICES SECTION
     width: 90%;
     background-color: #f9f3f2;
     z-index: 200;
+
+    visibility: hidden;
 }
 
 .services-card {

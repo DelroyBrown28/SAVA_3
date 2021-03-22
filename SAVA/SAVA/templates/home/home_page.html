@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
 <!-- {{ self.main_page_title }} -->
 
 
 {% block content %}
 
-<body style="background-image: url({% static 'images/mainbbg.png' %});">
+{% image self.main_page_background_image fill-1920x1080 as bg_img %}
+
+<body style="background-image: url('{{ bg_img.url }}');">
 
     <!-- TOP HOMEPAGE -->
     <section class="home-page-main flexed">
@@ -22,21 +25,22 @@
                         Virtual Assistant<br>
 
                     </h3>
-                    <p class="subheading mt-3 remove-me">Let me take care of your everyday tasks<br>
-                        so you can focus on what matters most.</p>
+                    <p class="subheading mt-3 remove-me">{{ self.main_page_subtitle|richtext }}</p>
                     <div class="top-homepage-btn-wrap">
                         <button class="top-homepage-btns services-btn btn-to-services remove-me">Services</button>
-
+                        {% if self.card_cta %}
                         <a href="#"><button class="top-homepage-btns contact-btn remove-me">Contact</button></a>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>
         </div>
 
-      <section class="services-section flexed redborder">
-          {% include 'blocks/service_card_block.html' %}
+        <section class="services-section flexed redborder">
+            {% include 'blocks/service_card_block.html' %}
 
-      </section>
+        </section>
 
     </section>
 
