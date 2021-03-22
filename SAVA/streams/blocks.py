@@ -21,7 +21,7 @@ class ServiceCardBlock(blocks.StructBlock):
         blocks.StructBlock(
             [
                 ("service_card_icon", ImageChooserBlock()),
-                ("service_title", blocks.CharBlock(required=True, max_length=50)),
+                ("service_title", blocks.RichTextBlock(required=True, max_length=50)),
                 ("service_item", blocks.RichTextBlock(
                     required=True, max_length=75)),
                 ("button_page", blocks.PageChooserBlock(

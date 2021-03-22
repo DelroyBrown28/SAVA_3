@@ -13,17 +13,22 @@
             <div class="service-card-icon-wrap">
                 <img src="{{ service_card_icon.url }}" alt="{{ service_card_icon.alt }}">
             </div>
-            <h5>{{ service_card.service_title }}</h5>
+            <h5 class="service-card-title">{{ service_card.service_title }}</h5>
             <p>{{ service_card.service_item }}</p>
     
             {% if service_card.button_page %}
-            <a href="{{ service_card.button_page.url }}">{{ service_card.button_text }}</a>
+            <a class="service-card-btns flexed" href="{{ service_card.button_page.url }}">{{ service_card.button_text }}</a>
             {% elif service_card.button_url %}
-            <a href="{{ service_card.button_url }}">{{ service_card.button_text }}</a>
+            <a class="service-card-btns flexed" href="{{ service_card.button_url }}">{{ service_card.button_text }}</a>
             {% endif %}
     
         </div>
+
         
         {% endfor %}
+        
+    </div>
+    <div class="close-btn">
+        ⟵
     </div>
 </div>
