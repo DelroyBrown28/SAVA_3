@@ -22,15 +22,17 @@ class ServiceCardBlock(blocks.StructBlock):
             [
                 ("service_card_icon", ImageChooserBlock()),
                 ("service_title", blocks.CharBlock(required=True, max_length=50)),
-                ("service_item", blocks.TextBlock(required=True, max_length=75)),
+                ("service_item", blocks.RichTextBlock(
+                    required=True, max_length=75)),
                 ("button_page", blocks.PageChooserBlock(
                     required=False, help_text="Link to page on your website")),
                 ("button_url", blocks.URLBlock(
                     required=False, help_text="Link to EXTERNAL URL")),
+                ("button_text", blocks.TextBlock(required=True, max_length=25)),
             ]
         )
     )
-    
+
     class Meta:
         template = "blocks/service_card_block.html"
         icon = 'image'
@@ -59,3 +61,19 @@ class SimpleRichtextBlock(blocks.RichTextBlock):
         template = 'blocks/richtext_block.html'
         icon = "edit"
         label = "Simple Richtext"
+
+
+class CTABlock(blocks.StructBlock):
+    """This will eventually be the call to action on the home page"""
+
+    title = blocks.CharBlock(required=True, max_length=100)
+    text = blocks.RichTextBlock(required=True, features=["bold", "italic"])
+    button_page = blocks.PageChooserBlock(required=False)
+    button_url = blocks.URLBlock(required=False)
+    button_text = blocks.CharBlock(
+        required=True, default="Button Text", max_length=45)
+
+    class Meta:
+        template = 'blocks/cta_block.html'
+        icon = 'image'
+        label = 'Call To Action'

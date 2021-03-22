@@ -28,12 +28,24 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name="+"
     )
-
+    content = StreamField(
+        [
+            # ("title_and_text", blocks.TitleAndTextBlock()),
+            # ("full_richtext", blocks.RichtextBlock()),
+            # ("simple_richtext", blocks.SimpleRichtextBlock()),
+            ("service_cards", blocks.ServiceCardBlock()),
+            ("cta", blocks.CTABlock()),
+        ],
+        null=True,
+        blank=True
+    )
     content_panels = Page.content_panels + [
         FieldPanel("main_page_title"),
         FieldPanel("main_page_subtitle"),
         ImageChooserPanel("main_page_background_image"),
         PageChooserPanel("card_cta"),
+        StreamFieldPanel("content"),
+        
 
     ]
 

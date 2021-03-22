@@ -1,0 +1,19 @@
+{% load wagtailcore_tags %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>{{ self.title }}</h3>
+            <p>{{ self.service_item }}</p>
+
+            
+            {% if self.button_page %}
+                <a href="{{ self.button_page.url }}">{{ self.button_text }}</a>
+                {% elif self.button_url %}
+                <a href="{{ self.button_url }}">{{ self.button_text }}</a>
+            {% endif %}
+                
+
+        </div>
+    </div>
+</div>

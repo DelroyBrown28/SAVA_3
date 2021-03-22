@@ -37,10 +37,12 @@
             </div>
         </div>
 
-        <section class="services-section flexed redborder">
-           
-           {% include 'blocks/service_card_block.html' %}
-               
+        <section class="services-section flexed">
+
+            {% for block in page.content  %}
+            {% include_block block %}
+            {% endfor %}
+
 
         </section>
 
