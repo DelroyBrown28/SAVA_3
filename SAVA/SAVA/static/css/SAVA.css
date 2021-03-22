@@ -39,8 +39,10 @@ HOME PAGE
 }
 
 .home-page-contents {
-    height: 100%;
+    position: relative;
+    height: calc(100vh - 64px);
     width: 100%;
+    z-index: 200;
 }
 
 .logo-img-wrap {
@@ -112,6 +114,27 @@ nav {
 #nav-mobile>li>a {
     color: #000;
 }
+
+/* 
+================
+SERVICES SECTION
+================
+*/
+
+.services-section {
+    position: absolute;
+    height: calc(100vh - 100px);
+    width: 90%;
+    background-color: #f9f3f2;
+    z-index: 200;
+}
+
+.services-card {
+    width: 300px;
+    height: 500px;
+}
+
+
 
 
 

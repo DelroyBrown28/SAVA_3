@@ -7,11 +7,12 @@
 
 <body style="background-image: url({% static 'images/mainbbg.png' %});">
 
+    <!-- TOP HOMEPAGE -->
     <section class="home-page-main flexed">
 
         <div class="row home-page-contents">
 
-            <div class="col s6 logo-img-wrap flexed">
+            <div class="col s6 logo-img-wrap remove-me flexed">
                 <img src="{% static 'images/mainlogo.png' %}" alt="Main logo image">
             </div>
 
@@ -32,7 +33,14 @@
             </div>
         </div>
 
+      <section class="services-section flexed redborder">
+          {% include 'blocks/service_card_block.html' %}
+
+      </section>
+
     </section>
+
+
 </body>
 
 

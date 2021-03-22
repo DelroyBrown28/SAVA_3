@@ -1,7 +1,8 @@
 from django.db import models
-
+from streams import blocks
 from wagtail.core.models import Page
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.core.fields import StreamField
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 
 
 class HomePage(Page):
@@ -11,8 +12,18 @@ class HomePage(Page):
 
     main_page_title = models.CharField(max_length=400, blank=False, null=True)
 
+    services_panels = StreamField(
+        [
+            ('services', blocks.ServiceCardBlock()),
+
+        ],
+        null=True,
+        blank=True
+    )
     content_panels = Page.content_panels + [
-        FieldPanel("main_page_title")
+        FieldPanel("main_page_title"),
+        StreamFieldPanel('services_panels'),
+        
     ]
 
     class Meta:
