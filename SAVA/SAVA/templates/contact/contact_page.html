@@ -6,14 +6,23 @@
 
 <body style="background-image: url('{% static 'images/mainbbg.png' %}');">
 
-    <div class="container flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
-        <h3>{{ page.title }}</h3>
-        <p>{{ self.form_intro|richtext }}</p>
-        <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade" data-aos-duration="1800">
-            {% csrf_token %}
-            {{ form.as_ul }}
-            <input class="contact-form-submit-btn" type="submit">
-        </form>
+    <div class="row contact-page-full-container">
+
+        <div class="col s6 contact-side-wrap">
+            <div class="container flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
+                <h3 class="contact-form-title">{{ page.title }}</h3>
+                <p>{{ self.form_intro|richtext }}</p>
+                <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade" data-aos-duration="1800">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <input type="submit" class="contact-form-submit-btn">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="col s6 contact-form-info-wrap"></div>
+
     </div>
 </body>
 {% endblock content %}
