@@ -12,7 +12,8 @@
             <div class="container flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
                 <h3 class="contact-form-title">{{ page.title }}</h3>
                 <p>{{ self.form_intro|richtext }}</p>
-                <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade" data-aos-duration="1800">
+                <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
+                    data-aos-duration="1800">
                     {% csrf_token %}
                     {{ form.as_ul }}
                     <input type="submit" class="contact-form-submit-btn">
@@ -21,7 +22,24 @@
         </div>
 
 
-        <div class="col s6 contact-form-info-wrap"></div>
+        <div class="col s6 contact-form-info-wrap flexed">
+            <img src="{% static 'images/savatextlogo.png' %}" alt="Text Logo" class="contact-info-logo">
+
+            <p class="content-info-blurb">We’re here to help you, but sometimes it’s difficult to know what to ask for, and how to ask for it!<br>
+                Below are a few point’s to make writing your tasks clear and easy for me<br>
+                to understand and complete.
+            </p>
+
+            <ul class="contact-info-help-list">
+                <li class="help-list">• I can help you with simple, repetitive tasks that take up a lot of time.</li>
+                <li class="help-list">• State each task individually with any pointers on how you would like things done.</li>
+                <li class="help-list">• A <a href="#">process document</a> can really help me get your task right first time.</li>
+                <li class="help-list">• Please be sure to let me know when the work needs to be completed by.</li>
+                <li class="help-list">• It’s best to give no more than 3 tasks at a time.</li>
+                <li class="help-list">• If you struggle explaining by text, fill in your contact details and request a call back.</li>
+                <li class="help-list">• Knowing a bit about your business can really help me tailor my service to you.</li>
+            </ul>
+        </div>
 
     </div>
 </body>

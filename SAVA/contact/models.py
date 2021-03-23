@@ -24,6 +24,7 @@ class ContactPage(WagtailCaptchaEmailForm):
 
     form_intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
+    
 
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('form_intro'),
