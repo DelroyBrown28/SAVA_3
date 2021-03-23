@@ -1,3 +1,6 @@
+AOS.init();
+
+
 const showServices = document.querySelector('.services-btn');
 const showServices2 = document.querySelector('.btn-to-services');
 const closeServices = document.querySelector('.close-btn');
