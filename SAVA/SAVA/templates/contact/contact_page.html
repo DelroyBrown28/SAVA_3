@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+<div class="container">
+    <h3>{{ page.title }}</h3>
+    <p>{{ self.form_intro|richtext }}</p>
+    <form action="{% pageurl page %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit">
+    </form>
+</div>
+{% endblock content %}
