@@ -1,5 +1,11 @@
 AOS.init();
 
+var RecaptchaOptions = {
+    theme: 'custom',
+    custom_theme_widget: 'recaptcha_widget'
+};
+
+
 
 const showServices = document.querySelector('.services-btn');
 const showServices2 = document.querySelector('.btn-to-services');

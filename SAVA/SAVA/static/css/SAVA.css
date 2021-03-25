@@ -217,8 +217,9 @@ CONTACT US PAGE
 */
 
 .contact-form-container {
-    width: fit-content;
+    width: 100%;
     height: 100%;
+    margin: 0 !important;
     flex-flow: column;
     padding: 15px;
     background-color: #f9f3f252;
@@ -232,8 +233,12 @@ CONTACT US PAGE
         0 100px 80px rgba(0, 0, 0, 0.02); */
 }
 
+.contact-form-container p {
+    font-size: 18px;
+}
+
 .contact-form {
-    width: 75%;
+    width: 40%;
 }
 
 .contact-form-title {
@@ -242,8 +247,10 @@ CONTACT US PAGE
 
 .contact-form li {
     list-style: none;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
+
+
 
 .contact-form li span {
     color: #333;
@@ -253,6 +260,30 @@ CONTACT US PAGE
 .contact-form label {
     font-size: 1.1rem;
     color: #333;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #333;
+    font-weight: 500;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #333;
+    font-weight: 500;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #333;
+    font-weight: 500;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #333;
+    font-weight: 500;
 }
 
 
@@ -273,9 +304,13 @@ CONTACT US PAGE
     padding-top: 5px;
 }
 
+.contact-form-btns-wrap {
+    justify-content: space-between;
+}
+
 .contact-form-submit-btn {
     height: 50px;
-    width: 100%;
+    width: 45%;
     font-family: 'Yeseva One', cursive;
     border: none;
     background-color: #333;
@@ -284,26 +319,39 @@ CONTACT US PAGE
 
 }
 
+.contact-form-file-upload-btn {
+    height: 50px;
+    width: 45%;
+    font-family: 'Yeseva One', cursive;
+    border: 1px solid #333;
+    background-color: #f9f3f2;
+    color: #333;
+    font-size: 20px;
+
+}
+
 .contact-side-wrap {
     padding: 0 !important;
+    width: 100%;
 }
 
 .contact-form-info-wrap {
     background-color: #f9f3f252;
     backdrop-filter: blur(30px);
     flex-flow: column;
+    justify-content: space-evenly;
 }
 
 .content-info-blurb {
-    text-align: center;
     margin: 25px 0px;
-    font-size: 1.2rem;
+    width: 85%;
+    font-size: 18px;
     font-weight: 400;
 }
 
 .contact-page-full-container {
-    height: 100vh;
-    
+    height: calc(100vh - 64px);
+
 }
 
 .content-info-logo-wrap {
@@ -313,18 +361,19 @@ CONTACT US PAGE
 
 .contact-info-logo {
     height: 35px;
-    
+
 }
 
 .contact-info-help-list {
     width: 85%;
-    height: 55%;
-    font-size: 1.3rem;
+    height: 40%;
+    font-size: 1.1rem;
+    font-weight: 300;
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    /* padding-top: 45px;
+    padding-bottom: 45px; */
 }
 
 

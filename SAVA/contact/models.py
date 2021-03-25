@@ -1,4 +1,5 @@
 from django.db import models
+from wagtail.core import blocks
 
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (FieldPanel,
@@ -19,7 +20,7 @@ class FormField(AbstractFormField):
     )
 
 
-class ContactPage(WagtailCaptchaEmailForm):
+class ContactPage(AbstractEmailForm):
     template = 'contact/contact_page.html'
 
     form_intro = RichTextField(blank=True)

@@ -4,43 +4,86 @@
 
 {% block content %}
 
+
 <body style="background-image: url('{% static 'images/mainbbg.png' %}');">
 
     <div class="row contact-page-full-container">
 
-        <div class="col s6 contact-side-wrap">
-            <div class="container flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
-                <h3 class="contact-form-title">{{ page.title }}</h3>
-                <p>{{ self.form_intro|richtext }}</p>
-                <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
+        <div class="col s12 contact-side-wrap">
+            <div class="flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
+                <p class="">{{ self.form_intro|richtext }}</p>
+
+                <!-- <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
                     data-aos-duration="1800">
                     {% csrf_token %}
                     {{ form.as_ul }}
+                    
                     <input type="submit" class="contact-form-submit-btn">
+                </form> -->
+
+                <form class="contact-form aos-init aos-animate" action="/contact-us/" method="POST" data-aos="fade"
+                    data-aos-duration="1800">
+                    {% csrf_token %}
+                    <input type="hidden" name="csrfmiddlewaretoken"
+                        value="i4dYfb2Jv7iTHXWAKjGD21uHipEzV1Yn0aNXQsDELwbscTgbPEpfk3EZmMK2zFVE">
+                    <li>
+                        <!-- <label for="id_full_name" class="">Full Name</label> -->
+                        <input type="text" placeholder="Full Name" name="full_name" maxlength="255" required=""
+                            id="id_full_name">
+                    </li>
+                    <li>
+                        <!-- <label for="id_email">Email</label> -->
+                        <input type="email" placeholder="Email" name="email" required="" id="id_email">
+                    </li>
+                    <li>
+                        <!-- <label for="id_contact_number">Contact Number</label> -->
+                        <input type="text" placeholder="Contact Number" name="contact_number" maxlength="255"
+                            required="" id="id_contact_number">
+                    </li>
+                    <li>
+                        <label for="id_what_can_we_help_you_with">What can we help you with?</label>
+                        <textarea name="what_can_we_help_you_with" placeholder="What Can We Help You With..." cols="40"
+                            rows="10" required="" id="id_what_can_we_help_you_with">
+                        </textarea>
+                    </li>
+
+
+                    <div class="contact-form-btns-wrap flexed">
+                        <input type="submit" class="contact-form-submit-btn">
+                        <a class="contact-form-file-upload-btn flexed" href="https://www.dropbox.com" target="_blank">
+                            Need to send a file?
+                        </a>
+                    </div>
                 </form>
+
+
             </div>
         </div>
 
 
-        <div class="col s6 contact-form-info-wrap flexed">
-            <img src="{% static 'images/savatextlogo.png' %}" alt="Text Logo" class="contact-info-logo">
+        <!-- <div class="col s6 contact-form-info-wrap flexed">
 
-            <p class="content-info-blurb">We’re here to help you, but sometimes it’s difficult to know what to ask for, and how to ask for it!<br>
-                Below are a few point’s to make writing your tasks clear and easy for me<br>
-                to understand and complete.
+            <p class="content-info-blurb">We’re here to help you, but sometimes it’s difficult to know what to ask for,
+                and how to ask for it! Below are a few point’s to make writing your tasks clear and easy for me
+                understand and complete.
             </p>
 
             <ul class="contact-info-help-list">
                 <li class="help-list">• I can help you with simple, repetitive tasks that take up a lot of time.</li>
-                <li class="help-list">• State each task individually with any pointers on how you would like things done.</li>
-                <li class="help-list">• A <a href="#">process document</a> can really help me get your task right first time.</li>
+                <li class="help-list">• State each task individually with any pointers on how you would like things
+                    done.</li>
+                <li class="help-list">• A <a href="#">process document</a> can really help me get your task right first
+                    time.</li>
                 <li class="help-list">• Please be sure to let me know when the work needs to be completed by.</li>
                 <li class="help-list">• It’s best to give no more than 3 tasks at a time.</li>
-                <li class="help-list">• If you struggle explaining by text, fill in your contact details and request a call back.</li>
-                <li class="help-list">• Knowing a bit about your business can really help me tailor my service to you.</li>
+                <li class="help-list">• If you struggle explaining by text, fill in your contact details and request a
+                    call back.</li>
+                <li class="help-list">• Knowing a bit about your business can really help me tailor my service to you.
+                </li>
             </ul>
-        </div>
+        </div> -->
 
     </div>
+
 </body>
 {% endblock content %}
