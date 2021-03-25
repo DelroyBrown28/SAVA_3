@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
 
 
-<body style="background-image: url('{% static 'images/mainbbg.png' %}');">
+<body>
 
-    <div class="row contact-page-full-container">
+    <div class="bg-image" style="background-image: url({% static 'images/contact_page_bg.jpg' %});">
 
-        <div class="col s12 contact-side-wrap">
-            <div class="flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
-                <p class="">{{ self.form_intro|richtext }}</p>
 
-                <!-- <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
+
+        <div class="row contact-page-full-container">
+
+            <div class="col s12 contact-side-wrap" >
+                <div class="flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
+                    <p class="">{{ self.form_intro|richtext }}</p>
+                    <div class="show-contact-help-btn flexed">?</div>
+
+                    <!-- <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
                     data-aos-duration="1800">
                     {% csrf_token %}
                     {{ form.as_ul }}
@@ -21,47 +26,48 @@
                     <input type="submit" class="contact-form-submit-btn">
                 </form> -->
 
-                <form class="contact-form aos-init aos-animate" action="/contact-us/" method="POST" data-aos="fade"
-                    data-aos-duration="1800">
-                    {% csrf_token %}
-                    <input type="hidden" name="csrfmiddlewaretoken"
-                        value="i4dYfb2Jv7iTHXWAKjGD21uHipEzV1Yn0aNXQsDELwbscTgbPEpfk3EZmMK2zFVE">
-                    <li>
-                        <!-- <label for="id_full_name" class="">Full Name</label> -->
-                        <input type="text" placeholder="Full Name" name="full_name" maxlength="255" required=""
-                            id="id_full_name">
-                    </li>
-                    <li>
-                        <!-- <label for="id_email">Email</label> -->
-                        <input type="email" placeholder="Email" name="email" required="" id="id_email">
-                    </li>
-                    <li>
-                        <!-- <label for="id_contact_number">Contact Number</label> -->
-                        <input type="text" placeholder="Contact Number" name="contact_number" maxlength="255"
-                            required="" id="id_contact_number">
-                    </li>
-                    <li>
-                        <label for="id_what_can_we_help_you_with">What can we help you with?</label>
-                        <textarea name="what_can_we_help_you_with" placeholder="What Can We Help You With..." cols="40"
-                            rows="10" required="" id="id_what_can_we_help_you_with">
+                    <form class="contact-form aos-init aos-animate" action="/contact-us/" method="POST" data-aos="fade"
+                        data-aos-duration="1800">
+                        {% csrf_token %}
+                        <input type="hidden" name="csrfmiddlewaretoken"
+                            value="i4dYfb2Jv7iTHXWAKjGD21uHipEzV1Yn0aNXQsDELwbscTgbPEpfk3EZmMK2zFVE">
+                        <li>
+                            <!-- <label for="id_full_name" class="">Full Name</label> -->
+                            <input type="text" placeholder="Full Name" name="full_name" maxlength="255" required=""
+                                id="id_full_name">
+                        </li>
+                        <li>
+                            <!-- <label for="id_email">Email</label> -->
+                            <input type="email" placeholder="Email" name="email" required="" id="id_email">
+                        </li>
+                        <li>
+                            <!-- <label for="id_contact_number">Contact Number</label> -->
+                            <input type="text" placeholder="Contact Number" name="contact_number" maxlength="255"
+                                required="" id="id_contact_number">
+                        </li>
+                        <li>
+                            <label for="id_what_can_we_help_you_with">What can we help you with?</label>
+                            <textarea name="what_can_we_help_you_with" placeholder="What Can We Help You With..."
+                                cols="40" rows="10" required="" id="id_what_can_we_help_you_with">
                         </textarea>
-                    </li>
+                        </li>
 
 
-                    <div class="contact-form-btns-wrap flexed">
-                        <input type="submit" class="contact-form-submit-btn">
-                        <a class="contact-form-file-upload-btn flexed" href="https://www.dropbox.com" target="_blank">
-                            Need to send a file?
-                        </a>
-                    </div>
-                </form>
+                        <div class="contact-form-btns-wrap flexed">
+                            <input type="submit" class="contact-form-submit-btn">
+                            <a class="contact-form-file-upload-btn flexed" href="https://www.dropbox.com"
+                                target="_blank">
+                                Need to send a file?
+                            </a>
+                        </div>
+                    </form>
 
 
+                </div>
             </div>
-        </div>
 
 
-        <!-- <div class="col s6 contact-form-info-wrap flexed">
+            <!-- <div class="col s6 contact-form-info-wrap flexed">
 
             <p class="content-info-blurb">We’re here to help you, but sometimes it’s difficult to know what to ask for,
                 and how to ask for it! Below are a few point’s to make writing your tasks clear and easy for me
@@ -83,7 +89,7 @@
             </ul>
         </div> -->
 
+        </div>
     </div>
-
 </body>
 {% endblock content %}

@@ -8,6 +8,13 @@ html {
 
 }
 
+.bg-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100% !important;
+}
+
 /* 
 ==============
 LITTLE HELPERS
@@ -35,7 +42,7 @@ HOME PAGE
 */
 
 .home-page-main {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 128px);
     padding: 145px;
 }
 
@@ -106,6 +113,13 @@ HOME PAGE
     background-color: transparent;
     border: 1px solid #333;
     margin-left: 25px;
+}
+
+.home-page-footer {
+    height: 64px;
+    bottom: 0px;
+    background: #333;
+    backdrop-filter: blur(30px);
 }
 
 
@@ -222,15 +236,19 @@ CONTACT US PAGE
     margin: 0 !important;
     flex-flow: column;
     padding: 15px;
-    background-color: #f9f3f252;
-    backdrop-filter: blur(30px);
-    /* box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.07),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.05),
-        0 12.5px 10px rgba(0, 0, 0, 0.042),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.035),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.028),
-        0 100px 80px rgba(0, 0, 0, 0.02); */
+    /* background-color: #f9f3f252; */
+    /* backdrop-filter: blur(30px); */
+   
+}
+
+.show-contact-help-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: gold;
+    cursor: pointer;
 }
 
 .contact-form-container p {

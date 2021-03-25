@@ -2,6 +2,7 @@ from django.db import models
 from wagtail.core import blocks
 
 from modelcluster.fields import ParentalKey
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.admin.edit_handlers import (FieldPanel,
                                          FieldRowPanel,
                                          InlinePanel,
@@ -25,7 +26,6 @@ class ContactPage(AbstractEmailForm):
 
     form_intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
-    
 
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('form_intro'),
