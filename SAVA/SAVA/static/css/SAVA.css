@@ -152,7 +152,7 @@ SERVICES SECTION
 
 .services-section {
     position: absolute;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 128px);
     width: 90%;
     background-color: #f9f3f232;
     backdrop-filter: blur(30px);
@@ -242,8 +242,8 @@ CONTACT US PAGE
 }
 
 .show-contact-help-btn {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin-bottom: 15px;
     background-color: #333;
@@ -342,9 +342,33 @@ CONTACT US PAGE
     width: 45%;
     font-family: 'Yeseva One', cursive;
     border: 1px solid #333;
-    background-color: #f9f3f2;
+    background-color: transparent;
     color: #333;
     font-size: 20px;
+
+}
+
+.contact-help-info-modal {
+    position: absolute;
+    height: calc(100vh - 128px);
+    height: 30px;
+    width: 30px;
+    top: 26%;
+    border-radius: 100%;
+    background-color: #333;
+    flex-flow: column;
+    z-index: 20;
+
+
+    visibility: hidden;
+}
+
+.help-info-close-btn {
+    color: #F7F7F7;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2rem;
 
 }
 
@@ -365,6 +389,7 @@ CONTACT US PAGE
     width: 85%;
     font-size: 18px;
     font-weight: 400;
+    color: #f7f7f7;
 }
 
 .contact-page-full-container {
@@ -390,6 +415,7 @@ CONTACT US PAGE
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
+    color: #f7f7f7;
     /* padding-top: 45px;
     padding-bottom: 45px; */
 }
@@ -446,5 +472,12 @@ HOVERS & SUCH...
 .back-home-btn:hover {
     color: #333;
     opacity: 0.5;
+    transition: 0.3s;
+}
+
+.show-contact-help-btn:hover {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
     transition: 0.3s;
 }

@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<body>
+<body style="overflow: hidden;">
 
     <div class="bg-image" style="background-image: url({% static 'images/contact_page_bg.jpg' %});">
 
@@ -13,24 +13,50 @@
 
         <div class="row contact-page-full-container">
 
-            <div class="col s12 contact-side-wrap" >
+            <div class="col s12 contact-side-wrap">
                 <div class="flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
                     <p class="">{{ self.form_intro|richtext }}</p>
                     <div class="show-contact-help-btn flexed">?</div>
+                    <div class="contact-help-info-modal flexed">
+                        <div class="help-info-close-btn">
+                            ⟵
+                        </div>
 
-                    <!-- <form class="contact-form" action="{% pageurl page %}" method="POST" data-aos="fade"
-                    data-aos-duration="1800">
-                    {% csrf_token %}
-                    {{ form.as_ul }}
-                    
-                    <input type="submit" class="contact-form-submit-btn">
-                </form> -->
+                        <p class="content-info-blurb">We’re here to help you, but sometimes it’s difficult to know what
+                            to ask for,
+                            and how to ask for it! Below are a few point’s to make writing your tasks clear and easy for
+                            me
+                            understand and complete.
+                        </p>
+
+                        <ul class="contact-info-help-list">
+                            <li class="help-list">• I can help you with simple, repetitive tasks that take up a lot of
+                                time.</li>
+                            <li class="help-list">• State each task individually with any pointers on how you would like
+                                things
+                                done.</li>
+                            <li class="help-list">• A <a href="#">process document</a> can really help me get your task
+                                right first
+                                time.</li>
+                            <li class="help-list">• Please be sure to let me know when the work needs to be completed
+                                by.</li>
+                            <li class="help-list">• It’s best to give no more than 3 tasks at a time.</li>
+                            <li class="help-list">• If you struggle explaining by text, fill in your contact details and
+                                request a
+                                call back.</li>
+                            <li class="help-list">• Knowing a bit about your business can really help me tailor my
+                                service to you.
+                            </li>
+                        </ul>
+
+                    </div>
+
 
                     <form class="contact-form aos-init aos-animate" action="/contact-us/" method="POST" data-aos="fade"
                         data-aos-duration="1800">
-                        {% csrf_token %}
                         <input type="hidden" name="csrfmiddlewaretoken"
                             value="i4dYfb2Jv7iTHXWAKjGD21uHipEzV1Yn0aNXQsDELwbscTgbPEpfk3EZmMK2zFVE">
+                        {% csrf_token %}
                         <li>
                             <!-- <label for="id_full_name" class="">Full Name</label> -->
                             <input type="text" placeholder="Full Name" name="full_name" maxlength="255" required=""
