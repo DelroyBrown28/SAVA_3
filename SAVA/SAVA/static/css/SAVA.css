@@ -58,7 +58,6 @@ HOME PAGE
 
 }
 
-.main-page-blurb-actions {}
 
 .top-homepage-blurb,
 .subheading {
@@ -238,7 +237,7 @@ CONTACT US PAGE
     padding: 15px;
     /* background-color: #f9f3f252; */
     /* backdrop-filter: blur(30px); */
-   
+
 }
 
 .show-contact-help-btn {
@@ -350,26 +349,43 @@ CONTACT US PAGE
 
 .contact-help-info-modal {
     position: absolute;
-    height: calc(100vh - 128px);
     height: 30px;
     width: 30px;
     top: 26%;
-    border-radius: 100%;
-    background-color: #333;
+    border: 2px solid #333;
+    background-color: #f9f3f232;
+    backdrop-filter: blur(30px);
     flex-flow: column;
     z-index: 20;
-
 
     visibility: hidden;
 }
 
 .help-info-close-btn {
-    color: #F7F7F7;
+    color: #333;
     position: absolute;
     top: 15px;
     left: 15px;
     font-size: 2rem;
 
+}
+.help-modal-close-btn {
+    height: 50px;
+    width: 210px;
+    border: none;
+    background-color: #333;
+    color: #f7f7f7;
+    font-family: 'Yeseva One', cursive;
+    font-size: 20px;
+
+    visibility: hidden;
+
+
+}
+
+.doc-link {
+    color: #333;
+    font-weight: 600;
 }
 
 .contact-side-wrap {
@@ -386,10 +402,13 @@ CONTACT US PAGE
 
 .content-info-blurb {
     margin: 25px 0px;
-    width: 85%;
+    text-align: center;
+    width: 55%;
     font-size: 18px;
     font-weight: 400;
-    color: #f7f7f7;
+    color: #333;
+
+    visibility: hidden;
 }
 
 .contact-page-full-container {
@@ -408,16 +427,16 @@ CONTACT US PAGE
 }
 
 .contact-info-help-list {
-    width: 85%;
+    width: 55%;
     height: 40%;
     font-size: 1.1rem;
     font-weight: 300;
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
-    color: #f7f7f7;
-    /* padding-top: 45px;
-    padding-bottom: 45px; */
+    color: #333;
+   
+    visibility: hidden;
 }
 
 
@@ -478,6 +497,27 @@ HOVERS & SUCH...
 .show-contact-help-btn:hover {
     background-color: transparent;
     color: #333;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.services-btn:hover {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.services-btn:active {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+    color: #f7f7f7;
     border: 1px solid #333;
     transition: 0.3s;
 }

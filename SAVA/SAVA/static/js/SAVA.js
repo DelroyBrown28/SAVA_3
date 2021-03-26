@@ -1,7 +1,7 @@
 AOS.init();
 
 const showHelpInfo = document.querySelector('.show-contact-help-btn');
-const closeHelpInfo = document.querySelector('.help-info-close-btn');
+const closeHelpInfo = document.querySelector('.help-modal-close-btn');
 
 
 // Stops animation from playing unless refreshed
@@ -12,10 +12,18 @@ const newtl = new TimelineLite({
 
 newtl.to('.contact-help-info-modal', 0.3, {
         autoAlpha: 1,
-        height: '100%',
+        height: '95%',
         width: '65%',
         top: '0px',
-        borderRadius: '0px',
+    })
+    .to('.content-info-blurb, .contact-info-help-list, .question-mark', 0.3, {
+        delay: 0.3,
+        autoAlpha: 1,
+    })
+    .to('.help-modal-close-btn', 0.3, {
+        // delay: 0.2,
+        autoAlpha: 1,
+
     })
 
 
