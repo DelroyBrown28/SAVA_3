@@ -1,5 +1,6 @@
 from django.db import models
 from streams import blocks
+# from wagtail.core import blocks
 from modelcluster.fields import ParentalKey
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
@@ -53,18 +54,30 @@ class Testimonials(Page):
         on_delete=models.SET_NULL,
         related_name="+"
     )
-    testimonial_name = models.CharField(blank=False, null=True, max_length=75)
-    testimonial_message = RichTextField(
-        features=["bold", "italic"], default="Paste message here...")
+
+    content = StreamField(
+        [
+            ("testimonials", blocks.TestimonialsBlock()),
+        ],
+        null=True,
+        blank=True
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("testimonials_page_title"),
         FieldPanel("testimonials_page_subtitle"),
         ImageChooserPanel("testimonials_page_background_image"),
-        MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('testimonial_name', classname='col12'),
-                FieldPanel('testimonial_message', classname='col12'),
-            ]),
-        ], heading="Email Settings"),
+        StreamFieldPanel("content"),
     ]
+
+    # testimonial_name = models.CharField(blank=False, null=True, max_length=75)
+    # testimonial_message = RichTextField(
+    #     features=["bold", "italic"], default="Paste message here...")
+    # content_panels = Page.content_panels + [
+        # MultiFieldPanel([
+        #     FieldRowPanel([
+        #         FieldPanel('testimonial_name', classname='col12'),
+        #         FieldPanel('testimonial_message', classname='col12'),
+        #     ]),
+        # ], heading="Testimonial Card"),
+    # ]

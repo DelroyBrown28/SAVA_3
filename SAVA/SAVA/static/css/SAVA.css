@@ -376,6 +376,7 @@ CONTACT US PAGE
     font-size: 2rem;
 
 }
+
 .help-modal-close-btn {
     height: 50px;
     width: 210px;
@@ -442,7 +443,7 @@ CONTACT US PAGE
     justify-content: space-evenly;
     flex-flow: column;
     color: #333;
-   
+
     visibility: hidden;
 }
 
@@ -477,17 +478,23 @@ TESTIMONIALS PAGE
 
 .testimonials-page-wrap {
     height: calc(100vh - 128px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    flex-flow: column;
 
 
 }
 
-.testimonials-bg-image {
-    height: 100%;
-
+.testimonial-card-wrap {
+    width: 85%;
+    flex-wrap: wrap;
 }
 
 .testimonial-card {
-    background-color: #F9F3F2;
+    background-color: #f7f7f732;
+    backdrop-filter: blur(30px);
     border: 1px solid #333;
     margin: 0px 15px;
     color: #333;
