@@ -45,11 +45,11 @@ class HomePage(Page):
         ImageChooserPanel("main_page_background_image"),
         PageChooserPanel("card_cta"),
         StreamFieldPanel("content"),
-        
-
     ]
 
     class Meta:
 
         verbose_name = "Home Page"
         verbose_name_plural = "Home Pages"
+
+

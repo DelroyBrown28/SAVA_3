@@ -46,9 +46,16 @@ HOME PAGE
     padding: 145px;
 }
 
+.main-page-blurb-actions {
+    height: 100%;
+
+}
+
 .home-page-contents {
     position: relative;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 128px);
+    margin-bottom: 0px;
+
     width: 100%;
     z-index: 200;
 }
@@ -462,7 +469,49 @@ THANK YOU PAGE
 }
 
 
+/* 
+=================
+TESTIMONIALS PAGE
+=================
+*/
 
+.testimonials-page-wrap {
+    height: calc(100vh - 128px);
+
+
+}
+
+.testimonials-bg-image {
+    height: 100%;
+
+}
+
+.testimonial-card {
+    background-color: #F9F3F2;
+    border: 1px solid #333;
+    margin: 0px 15px;
+    color: #333;
+    height: 230px;
+    width: 500px;
+    padding: 30px;
+    flex-flow: column;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.07),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.05),
+        0 12.5px 10px rgba(0, 0, 0, 0.042),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.035),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.028),
+        0 100px 80px rgba(0, 0, 0, 0.02);
+
+}
+
+.testimonial-card p {
+    margin: 0;
+}
+
+.quote-icon-wrap {
+    width: 100%;
+}
 
 
 

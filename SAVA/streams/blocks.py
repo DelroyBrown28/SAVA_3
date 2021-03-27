@@ -21,7 +21,8 @@ class ServiceCardBlock(blocks.StructBlock):
         blocks.StructBlock(
             [
                 ("service_card_icon", ImageChooserBlock()),
-                ("service_title", blocks.RichTextBlock(required=True, max_length=50)),
+                ("service_title", blocks.RichTextBlock(
+                    required=True, max_length=50)),
                 ("service_item", blocks.RichTextBlock(
                     required=True, max_length=75)),
                 ("button_page", blocks.PageChooserBlock(
@@ -77,3 +78,13 @@ class CTABlock(blocks.StructBlock):
         template = 'blocks/cta_block.html'
         icon = 'image'
         label = 'Call To Action'
+
+
+class TestimonialsBlock(blocks.StructBlock):
+    testimonial_name = blocks.CharBlock(required=True, max_length=100)
+    testimonial_message = blocks.RichTextBlock(required=True, max_length=214)
+
+    class Meta:
+        template = 'blocks/testimonials_block.html'
+        icon = 'placeholder'
+        label = 'Testimonial Card'

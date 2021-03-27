@@ -15,6 +15,7 @@ class FlexPage(Page):
             ("simple_richtext", blocks.SimpleRichtextBlock()),
             ("service_cards", blocks.ServiceCardBlock()),
             ("cta", blocks.CTABlock()),
+            ("testimonials", blocks.TestimonialsBlock()),
         ],
         null=True,
         blank=True
