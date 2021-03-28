@@ -8,6 +8,10 @@ html {
 
 }
 
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
 .bg-image {
     background-position: center;
     background-size: cover;
@@ -311,6 +315,8 @@ CONTACT US PAGE
 }
 
 
+
+
 #id_full_name,
 #id_email,
 #id_contact_number,
@@ -324,8 +330,11 @@ CONTACT US PAGE
 #id_what_can_we_help_you_with {
     height: 150px;
     resize: none;
-    padding-left: 5px;
-    padding-top: 5px;
+    padding: 15px;
+}
+
+.textbox-label {
+    margin-bottom: 10px;
 }
 
 .contact-form-btns-wrap {
@@ -364,7 +373,15 @@ CONTACT US PAGE
     backdrop-filter: blur(30px);
     flex-flow: column;
     z-index: 20;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.07),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.05),
+        0 12.5px 10px rgba(0, 0, 0, 0.042),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.035),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.028),
+        0 100px 80px rgba(0, 0, 0, 0.02);
 
+    /* Reset by gsap */
     visibility: hidden;
 }
 
@@ -485,11 +502,14 @@ TESTIMONIALS PAGE
     flex-flow: column;
 
 
+
 }
 
 .testimonial-card-wrap {
     width: 85%;
     flex-wrap: wrap;
+    overflow: auto;
+
 }
 
 .testimonial-card {
@@ -520,10 +540,99 @@ TESTIMONIALS PAGE
     width: 100%;
 }
 
+.leave-message-btn {
+    height: 50px;
+    width: 210px;
+    background-color: #333;
+    color: #f7f7f7;
+    backdrop-filter: blur(30px);
+    /* font-family: 'Yeseva One', cursive; */
+    border: 1px solid #333;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
 
 
 
+/* 
+=================
+TESTIMONIALS FORM
+=================
+*/
 
+.testimonial-page-title {
+    font-weight: 600;
+}
+
+
+.testimonial-form-container {
+    width: 100%;
+    height: calc(100vh - 128px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 !important;
+    flex-flow: column;
+    padding: 15px;
+}
+
+.testimonial-form {
+    width: 40%;
+
+}
+
+.testimonial-form-container p {
+    margin: 15px 0px;
+    text-align: center;
+    width: 40%;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+}
+
+.testimonial-form-container li {
+    list-style: none;
+    margin-bottom: 35px;
+
+
+}
+
+
+#id_thoughts {
+    height: 150px;
+    resize: none;
+    padding: 15px;
+}
+
+.testimonial-form-submit-btn {
+    height: 50px;
+    width: 100%;
+    font-family: 'Yeseva One', cursive;
+    border: none;
+    background-color: #333;
+    color: #f7f7f7;
+    font-size: 20px;
+}
+
+
+/* 
+===========================
+TESTIMONIALS THANK YOU PAGE
+===========================
+*/
+
+.thank-you-container {
+    height: calc(100vh - 128px);
+    width: 100%;
+    flex-flow: column;
+
+}
+
+.thank-you-container p {
+    font-size: 22px;
+}
 
 
 
@@ -574,6 +683,13 @@ HOVERS & SUCH...
 .contact-btn:hover {
     background-color: #333;
     color: #f7f7f7;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.leave-message-btn:hover {
+    background-color: transparent;
+    color: #333;
     border: 1px solid #333;
     transition: 0.3s;
 }

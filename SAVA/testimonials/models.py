@@ -25,12 +25,28 @@ class TestimonialFormPage(AbstractEmailForm):
     template = 'testimonials/testimonials_page.html'
 
     intro = RichTextField(blank=True)
+    testimonial_form_page_bg = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+"
+    )
     thank_you_text = RichTextField(blank=True)
+    testimonial_thank_you_page_background = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+"
+    )
 
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('intro'),
+        ImageChooserPanel('testimonial_form_page_bg'),
         InlinePanel('form_fields', label='Testimonial Form Fields'),
         FieldPanel('thank_you_text'),
+        ImageChooserPanel('testimonial_thank_you_page_background'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),
@@ -69,15 +85,3 @@ class Testimonials(Page):
         ImageChooserPanel("testimonials_page_background_image"),
         StreamFieldPanel("content"),
     ]
-
-    # testimonial_name = models.CharField(blank=False, null=True, max_length=75)
-    # testimonial_message = RichTextField(
-    #     features=["bold", "italic"], default="Paste message here...")
-    # content_panels = Page.content_panels + [
-        # MultiFieldPanel([
-        #     FieldRowPanel([
-        #         FieldPanel('testimonial_name', classname='col12'),
-        #         FieldPanel('testimonial_message', classname='col12'),
-        #     ]),
-        # ], heading="Testimonial Card"),
-    # ]
