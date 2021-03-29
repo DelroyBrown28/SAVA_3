@@ -6,8 +6,9 @@
 
 
 <body style="overflow: hidden;">
+    {% image self.contact_page_background_image fill-1920x1080 as bg_img %}
 
-    <div class="bg-image" style="background-image: url({% static 'images/contact_page_bg.jpg' %});">
+    <div class="bg-image" style="background-image: url('{{ bg_img.url }}');">
 
 
 
@@ -15,8 +16,10 @@
 
             <div class="col s12 contact-side-wrap">
                 <div class="flexed contact-form-container" data-aos="fade" data-aos-duration="1500">
-                    <p class="">{{ self.form_intro|richtext }}</p>
+                    {{ self.form_intro|richtext }}
+                    <span class="form-intro-text-mobile">Make your description as detailed as possible.</span>
                     <div class="show-contact-help-btn flexed">?</div>
+
                     <div class="contact-help-info-modal flexed">
 
                         <h3 class="question-mark">?</h3>
@@ -34,7 +37,7 @@
                             <li class="help-list">• State each task individually with any pointers on how you would like
                                 things
                                 done.</li>
-                            <li class="help-list">• A <a class="doc-link" href="https://www.dropbox.com"
+                            <li class="help-list">• A <a class="doc-link" href="https://creately.com/blog/diagrams/process-documentation-guide/#How"
                                     target="_blank">process document</a> can really help me get your task
                                 right first
                                 time.</li>
@@ -60,16 +63,13 @@
                             value="i4dYfb2Jv7iTHXWAKjGD21uHipEzV1Yn0aNXQsDELwbscTgbPEpfk3EZmMK2zFVE">
                         {% csrf_token %}
                         <li>
-                            <!-- <label for="id_full_name" class="">Full Name</label> -->
                             <input type="text" placeholder="Full Name" name="full_name" maxlength="255" required=""
                                 id="id_full_name">
                         </li>
                         <li>
-                            <!-- <label for="id_email">Email</label> -->
                             <input type="email" placeholder="Email" name="email" required="" id="id_email">
                         </li>
                         <li>
-                            <!-- <label for="id_contact_number">Contact Number</label> -->
                             <input type="text" placeholder="Contact Number" name="contact_number" maxlength="255"
                                 required="" id="id_contact_number">
                         </li>
@@ -88,6 +88,10 @@
                             <a class="contact-form-file-upload-btn flexed" href="https://www.dropbox.com"
                                 target="_blank">
                                 Need to send a file?
+                            </a>
+                            <a class="contact-form-file-upload-btn-mobile flexed" href="https://www.dropbox.com"
+                                target="_blank">
+                                Send file?
                             </a>
                         </div>
                     </form>

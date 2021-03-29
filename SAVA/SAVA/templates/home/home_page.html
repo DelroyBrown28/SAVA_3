@@ -8,7 +8,7 @@
 
 {% image self.main_page_background_image fill-1920x1080 as bg_img %}
 
-<body>
+<body class="home-page-body">
 
     <div class="bg-image" style="background-image: url('{{ bg_img.url }}');">
 
@@ -21,13 +21,16 @@
 
                 <div class="col s6 flexed main-page-blurb-actions" data-aos="fade" data-aos-duration="1800">
                     <div class="heading-subheading-wrap remove-me">
-                        <h3 class="top-homepage-blurb">Miss SA Brown<br>
+                        <h3 class="top-homepage-blurb">Miss SA Brown
+                            <!-- <hr class="line-thing"> -->
+                            <br class="line-break">
                             Virtual Assistant<br>
 
                         </h3>
                         <p class="subheading mt-3 remove-me">{{ self.main_page_subtitle|richtext }}</p>
                         <div class="top-homepage-btn-wrap">
                             <button class="top-homepage-btns services-btn btn-to-services remove-me">Services</button>
+                            <a href="#services" class="top-homepage-btns services-btn-mobile flexed">Services</a>
                             {% if self.card_cta %}
                             <a href="/contact-us/"><button
                                     class="top-homepage-btns contact-btn remove-me">Contact</button></a>
@@ -38,22 +41,30 @@
                 </div>
             </div>
 
-            <!-- Services Cards -->
+            <!-- Desktop Services Cards -->
             <section class="services-section flexed">
-
                 {% for block in page.content  %}
                 {% include_block block %}
                 {% endfor %}
-
-
             </section>
+            <!-- Desktop Services Cards -->
         </section>
+
+
+
+        <!-- Mobile Services Cards -->
+        <section id="services" class="services-section-mobile">
+            {% for block in page.content  %}
+            {% include_block block %}
+            {% endfor %}
+        </section>
+        <!-- Mobile Services Cards -->
 
         <!-- <footer class="home-page-footer"></footer> -->
 
     </div>
 
-    
+
 </body>
 
 

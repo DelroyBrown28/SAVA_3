@@ -25,10 +25,18 @@ class ContactPage(AbstractEmailForm):
     template = 'contact/contact_page.html'
 
     form_intro = RichTextField(blank=True)
+    contact_page_background_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+"
+    )
     thank_you_text = RichTextField(blank=True)
 
     content_panels = AbstractEmailForm.content_panels + [
-        FieldPanel('form_intro'),
+        FieldPanel('form_intro', classname='form-intro-text'),
+        ImageChooserPanel('contact_page_background_image'),
         InlinePanel('form_fields', label='Form Fields'),
         FieldPanel('thank_you_text'),
         MultiFieldPanel([

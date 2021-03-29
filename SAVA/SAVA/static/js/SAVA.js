@@ -1,5 +1,6 @@
 AOS.init();
 
+
 const showHelpInfo = document.querySelector('.show-contact-help-btn');
 const closeHelpInfo = document.querySelector('.help-modal-close-btn');
 
@@ -12,7 +13,7 @@ const newtl = new TimelineLite({
 
 newtl.to('.contact-help-info-modal', 0.3, {
         autoAlpha: 1,
-        height: '95%',
+        height: '100%',
         width: '65%',
         top: '0px',
     })

@@ -1,17 +1,41 @@
 {% load static %}
 
 
-  <nav data-aos="fade" data-aos-duration="1200">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo center link-hover">
-        <img src="{% static 'images/savatextlogo.png' %}" alt="Text Logo">
+<!-- <nav data-aos="fade" data-aos-duration="1200">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo center link-hover">
+      <img src="{% static 'images/savatextlogo.png' %}" alt="Text Logo">
     </a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/contact-us/" class="link-hover"><i class="fas fa-phone-alt"></i></a></li>
-      </ul>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="link-hover btn-to-services" href="#">Services</a></li>
-        <li><a class="link-hover btn-to-services" href="/our-clients-testimonials/">Testimonials</a></li>
-      </ul>
-    </div>
-  </nav>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="/contact-us/" class="link-hover"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="link-hover btn-to-services" href="#">Services</a></li>
+      <li><a class="link-hover btn-to-services" href="/our-clients-testimonials/">Testimonials</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+
+
+
+<nav data-aos="fade" data-aos-duration="1200">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo center link-hover">
+      <img src="{% static 'images/savatextlogo.png' %}" alt="Text Logo">
+    </a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="color: #333;" class="fas fa-bars"></i></a>
+    <ul class="left hide-on-med-and-down">
+      <li><a style="color: #333;" href="/contact-us/" class="link-hover"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="link-hover btn-to-services" href="#">Services</a></li>
+      <li><a class="link-hover btn-to-services" href="/our-clients-testimonials/">Testimonials</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a style="color: #333;" href="/contact-us/" class="link-hover"><i class="fas fa-envelope"></i></a></li>
+  <li><a href="/our-clients-testimonials/">Tesimonials</a></li>
+</ul>

@@ -1,8 +1,7 @@
 body,
 html {
     height: 100vh;
-    /* padding-left: 20px;
-    padding-right: 20px; */
+    scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
     /* overflow: hidden; */
 
@@ -12,11 +11,30 @@ html {
     visibility: hidden;
 }
 
+.services-section-mobile,
+.services-btn-mobile,
+.line-thing,
+.contact-form-file-upload-btn-mobile,
+.form-intro-text-mobile {
+    display: none !important;
+}
+
+.services-main-title,
+.line-thing {
+    visibility: hidden;
+}
+
 .bg-image {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100% !important;
+}
+
+.main-footer {
+    height: 64px;
+    width: 100%;
+
 }
 
 /* 
@@ -94,7 +112,7 @@ HOME PAGE
     line-height: 105% !important;
     width: 100%;
     font-size: 25px;
-    opacity: 0.6;
+    opacity: 0.8;
     font-family: 'Yeseva One', cursive;
 
 }
@@ -154,6 +172,10 @@ nav {
     color: #000;
 }
 
+.btn-to-services {
+    color: #333;
+}
+
 /* 
 ================
 SERVICES SECTION
@@ -167,7 +189,7 @@ SERVICES SECTION
     background-color: #f9f3f232;
     backdrop-filter: blur(30px);
     z-index: 200;
-
+    /* Reset by gsap */
     visibility: hidden;
 
     box-shadow:
@@ -242,7 +264,7 @@ CONTACT US PAGE
 
 .contact-form-container {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 128px);
     margin: 0 !important;
     flex-flow: column;
     padding: 15px;
@@ -437,7 +459,7 @@ CONTACT US PAGE
 }
 
 .contact-page-full-container {
-    height: calc(100vh - 64px);
+    height: calc(100vh - 128px);
 
 }
 
@@ -603,7 +625,7 @@ TESTIMONIALS FORM
 #id_thoughts {
     height: 150px;
     resize: none;
-    padding: 15px;
+    padding: 10px;
 }
 
 .testimonial-form-submit-btn {
@@ -633,11 +655,6 @@ TESTIMONIALS THANK YOU PAGE
 .thank-you-container p {
     font-size: 22px;
 }
-
-
-
-
-
 
 
 
@@ -692,4 +709,156 @@ HOVERS & SUCH...
     color: #333;
     border: 1px solid #333;
     transition: 0.3s;
+}
+
+/* 
+=============
+MEDIA QUERIES
+=============
+*/
+
+
+@media (max-width : 450px) {
+
+    .logo-img-wrap,
+    .services-section,
+    .services-btn,
+    .close-btn,
+    .contact-form-file-upload-btn {
+        display: none;
+    }
+
+    .home-page-body {
+        overflow: auto !important;
+    }
+
+
+    .top-homepage-blurb {
+        text-align: center;
+    }
+
+    .heading-subheading-wrap p {
+        font-size: 20px;
+        text-align: center;
+        margin: 35px 0px;
+
+    }
+
+    .top-homepage-btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: column;
+        height: 120px;
+
+    }
+
+    .contact-btn {
+        margin: 0;
+    }
+
+    /* Services Section */
+
+
+
+    .services-section-mobile {
+        /* position: relative; */
+        display: flex !important;
+        height: fit-content;
+        width: 100%;
+        margin-top: 100px;
+        overflow: auto;
+    }
+
+    .services-section {
+        display: none;
+    }
+
+    .services-container {
+        flex-flow: column;
+        padding: 20px;
+
+    }
+
+    .services-main-title {
+        text-align: center;
+        font-size: 2.7rem;
+        font-weight: 600;
+        visibility: visible;
+    }
+
+    .service-card {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .services-btn-mobile {
+        display: flex !important;
+        background-color: #333;
+        color: #f7f7f7;
+
+    }
+
+
+    /* Contact form page */
+
+    .form-intro-text-mobile {
+        display: block !important;
+    }
+
+    .contact-form-container p {
+        display: none;
+    }
+
+    .form-intro-text-mobile {
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        margin: 15px 0px;
+    }
+
+    .contact-form {
+        width: 85%;
+    }
+
+    .contact-form li {
+        list-style: none;
+        margin-bottom: 15px;
+    }
+
+    .contact-form-file-upload-btn-mobile {
+        display: flex !important;
+        height: 50px;
+        width: 45%;
+        font-family: 'Yeseva One', cursive;
+        border: 1px solid #333;
+        background-color: transparent;
+        color: #333;
+        font-size: 20px;
+    }
+
+    /* Contact Form Help List */
+
+
+    .contact-info-help-list {
+        width: 100%;
+        height: 65%;
+        font-weight: 400;
+        justify-content: space-around;
+
+    }
+
+    .contact-help-info-modal {
+        overflow: auto;
+        height: calc(100vh - 128px);
+        width: 100% !important;
+        padding: 15px;
+
+    }
+
+    .content-info-blurb {
+        visibility: visible;
+        border: 1px solid red;
+    }
+
 }
