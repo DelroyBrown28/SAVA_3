@@ -134,7 +134,7 @@ HOME PAGE
 
 .services-btn {
     background-color: #333;
-    color: #f7f7f7;
+    color: #f7f7f7 !important;
 }
 
 .contact-btn {
@@ -724,7 +724,8 @@ MEDIA QUERIES
     .services-section,
     .services-btn,
     .close-btn,
-    .contact-form-file-upload-btn {
+    .contact-form-file-upload-btn,
+    .testimonial-page-title {
         display: none;
     }
 
@@ -860,5 +861,38 @@ MEDIA QUERIES
         visibility: visible;
         border: 1px solid red;
     }
+
+    /* Testimonials Page */
+
+    .testimonial-card-wrap {
+        width: 100%;
+    }
+
+    .testimonials-page-wrap h4,
+    p {
+        text-align: center;
+    }
+
+    .leave-message-btn {
+        height: 200px;
+    }
+
+    /* Testimonials Form Page */
+
+    
+    .testimonial-form-container p {
+        width: 98%;
+    }
+
+    .testimonial-form {
+        width: 95%;
+        height: 100%;
+    
+    }
+
+
+
+
+
 
 }
