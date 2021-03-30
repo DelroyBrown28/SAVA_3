@@ -1,1 +1,1 @@
-web: gunicorn SAVA.wsgi:application --log-file -
+web: gunicorn SAVA.SAVA.wsgi:application --log-file -
