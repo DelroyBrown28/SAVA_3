@@ -1,0 +1,79 @@
+* {
+    font-family: 'Inter', sans-serif;
+    border-radius: 0px !important;
+
+}
+
+.help-info {
+    background-color: #fff;
+    border: 1px solid #333;
+} 
+
+/* 
+================
+ADMIN: MAIN PAGE
+================
+*/
+
+header {
+    background-color: #333;
+}
+
+.summary ul.stats span {
+    color: #333;
+    font-family: 'Inter', sans-serif !important;
+
+}
+
+.summary ul.stats a {
+    color: #333;
+}
+
+.summary ul.stats li:before {
+    color: #333;
+    opacity: 1 !important;
+}
+
+.object>.title-wrapper {
+    background-color: #f7f7f7 !important;
+}
+
+
+/* 
+====================
+ADMIN: INSIDE A PAGE
+====================
+*/
+
+.breadcrumb {
+    background-color: #333;
+}
+
+.home:hover, a:hover {
+    background-color: #333 !important;
+    color: #f7f7f7 !important;
+    opacity: 0.5 !important;
+    transition: 0.3s;
+}
+
+.breadcrumb a,
+.breadcrumb .arrow_right_icon {
+    color: #f7f7f7;
+
+}
+
+/* 
+=========================
+ADMIN: ROOT EXPLORER PAGE
+=========================
+*/
+
+.page-explorer .listing .index {
+    background-color: #333;
+}
+
+.page-explorer .listing .index .button.bicolor {
+    background-color: #333;
+    border: 1px solid #f7f7f7;
+
+}
