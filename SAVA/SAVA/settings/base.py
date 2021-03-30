@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import django_heroku
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -95,17 +96,12 @@ WSGI_APPLICATION = 'SAVA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+}
 
 
 # Password validation
@@ -177,3 +173,6 @@ BASE_URL = 'http://example.com'
 RECAPTCHA_PUBLIC_KEY = "6LdkX4saAAAAAILQz4pUALfDQgS2ggnx9a1h3q2B"
 RECAPTCHA_PRIVATE_KEY = "6LdkX4saAAAAAIuAQstBp2_KRHmPf2jN_FuCP9kW"
 NOCAPTCHA = True
+
+
+django_heroku.settings(locals())
